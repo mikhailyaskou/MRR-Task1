@@ -22,7 +22,7 @@
 @property (nonatomic, retain) NSDictionary *address; // map, содержащий информации о city, country, postCode
 @property (nonatomic, copy, readonly) NSString *city; // на основе инфы в address
 @property (nonatomic, copy, readonly) NSString *country; // на основе инфы в address
-@property(nonatomic, assign, getter=isContactUser) BOOL contactUser; // сделать readonly, сделать get-метод isContactUser  // переопределить get/set методы // допустим, что есть модель описывающая какие пользователи в контактной книги😃
+@property(nonatomic, readonly, getter=isContactUser) BOOL contactUser; // сделать readonly, сделать get-метод isContactUser  // переопределить get/set методы // допустим, что есть модель описывающая какие пользователи в контактной книги😃
 
 - (id)initWithUserId:(NSNumber *)userId firstName: (NSMutableString *)firstName lastName:(NSMutableString *)lastName;
 

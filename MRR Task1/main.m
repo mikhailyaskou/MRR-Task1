@@ -55,7 +55,7 @@ int main(int argc, const char * argv[]) {
         
         /* 2 что происходит с объектами добавляемыми в NSDictionary, а точнее с key и value - assign, retain или copy
          
-         Происходит retain.
+         c value происходит retain, c key происходит copy;
          
          */
         
@@ -65,16 +65,19 @@ int main(int argc, const char * argv[]) {
         user1.firstName = myFirstName;
         user1.lastName = myLastName;
         
+        NSString * oneKey = @"1";
+        NSString * twoKey = @"2";
         
         
-        NSDictionary *usersDictonary = @{@"1" : user1, @ "2" : user2};
+        NSDictionary *usersDictonary = @{oneKey : user1, twoKey : user2};
         
         NSLog(@"%lu", (unsigned long)[user1 retainCount]);
         
+        oneKey = @"2";
         
-        [usersDictonary[@"1"] setFirstName : [NSMutableString stringWithString:@"changed by dictonary index in dictonary / "]];
+        [usersDictonary[oneKey] setFirstName : [NSMutableString stringWithString:@"changed by dictonary index in dictonary / "]];
         
-        NSLog(@"%@ from dictonary", user1.firstName);
+        NSLog(@"from dictonary - %@", user1.firstName);
         
        
         

@@ -177,10 +177,6 @@
 }
 
 
--(void)setContactUser:(BOOL)contactUser{
-    
-}
-
 -(BOOL)isContactUser{
     return _contactUser;
 }
